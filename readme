@@ -55,7 +55,7 @@ Here is the link to the plist & the modified plexconnect.py:
 
 https://github.com/wahlmanj/com.plex.pms.plist
 
-Reset you mac then goto your atv and change your network to manual and dont change anything but your dns to point to your pms server for example my mac ip is 192.168.1.101
+Reset your mac then goto your atv and change your network to manual and dont change anything but your dns to point to your pms server for example my mac ip is 192.168.1.101
 
 I have yet to see trailers unavaliable yet when my mac is running which is typically 24/7 using the above methods.
 
