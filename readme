@@ -25,7 +25,7 @@ Edit this file, changing the *two* instances of 'Users/chris/PlexConnect' to the
 Go into the terminal, change directory into your folder, and enter the following commands (If you have loaded my plist before this it will not load plexconnect properly you must load this plist first):
 
 Sudo su
-Cd /(yourfilelocation)
+cd /(yourfilelocation)
 cp com.plex.plexconnect.plist /Library/LaunchDaemons/
 Chmod 644 com.plex.plexconnect.plist
 chown root:wheel com.plex.plexconnect.plist
@@ -38,11 +38,11 @@ Copy your plex app and rename it to PMS in /applications then Show package conte
 
 Open terminal then enter these commands
 sudo su
-cd /location/of/com.plex.pms.plist
+cd /(yourfilelocation)
 cp com.plex.pms.plist /Library/LaunchDaemons/
-chown root:wheel /Library/LaunchDaemons/com.plex.pms.plist
-chmod 644 /Library/LaunchDaemons/com.plex.pms.plist
-launchctl load /Library/LaunchDaemons/com.plex.pms.plist
+chown root:wheel com.plex.pms.plist
+chmod 644 com.plex.pms.plist
+launchctl load com.plex.pms.plist
 
 I also added this to plexconnect.py above (import sys, time) at the beginning of the file so plexconnect can run after pms kills itself prior to login.
 
@@ -55,7 +55,7 @@ Here is the link to the plist & the modified plexconnect.py:
 
 https://github.com/wahlmanj/com.plex.pms.plist
 
-Now goto your atv and change your network to manual and dont change anything but your dns to point to your pms server for example my mac ip is 192.168.1.101
+Reset you mac then goto your atv and change your network to manual and dont change anything but your dns to point to your pms server for example my mac ip is 192.168.1.101
 
 I have yet to see trailers unavaliable yet when my mac is running which is typically 24/7 using the above methods.
 
