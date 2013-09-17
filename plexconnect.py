@@ -8,7 +8,7 @@ inter-process-communication (queue): http://pymotw.com/2/multiprocessing/communi
 """
 
 import time
-time.sleep (.5)
+time.sleep (1)
 import sys, time
 from os import sep
 import socket
