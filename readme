@@ -16,29 +16,42 @@ Next, create com.plex.plexconnect.plist with the following:
 
 https://gist.github.com/chrishulbert/5772931
 
-Edit this file, changing the two instances of 'Users/chris/PlexConnect' to the correct folder that you've installed PlexConnect in.
+Edit this file, changing the *two* instances of 'Users/chris/PlexConnect' to the correct folder that you've installed PlexConnect in.
 
-Go into the terminal, change into your plexconnect folder, and do the following:
+Go into the terminal, change directory into your folder, and enter the following commands (If you have loaded my plist before this it will not load plexconnect properly you must load this plist first):
 
-sudo cp com.plex.plexconnect.plist /Library/LaunchDaemons/
-sudo launchctl load /Library/LaunchDaemons/com.plex.plexconnect.plist
-
-If you have errors run this @ teminal while in /library/launchdaemons
-
+Sudo su
+Cd /yourfilelocation
+cp com.plex.plexconnect.plist /Library/LaunchDaemons/
 Chmod 644 com.plex.plexconnect.plist
 chown root:wheel com.plex.plexconnect.plist
+launchctl load com.plex.plexconnect.plist
+Launch load com.plex.plexconnect
 
 Now goto your atv and change your network to manual and dont change anything but your dns to point to your pms server for example mine is 192.168.1.25 for my mac
 
 Enable trailers on your atv if its disabled in parental controls and enjoy plex via the trailers app based on java on your apple tv!
 
-plex media server plist made by me :P This will run plex after you login not at boot since at this time plex cannot start at boot since it was coded that way. This will keep plex running even if it crashes and if the plex media center app ever coded differently it will load plex prior to login. 
+plex media server plist made by me :P This will run plex after you login not at boot since at this time plex cannot start at boot since it was coded that way. This will keep plex running even if it crashes and if the plex media center app ever coded differently it will load plex prior to login.
 
-Copy your plex app and rename it to PMS in /applications
-Show package contents of your new app PMS and rename Applications/PMS.app/Contents/MacOS/Plex Media Server to PMS
-Copy the com.plex.pms.plist to system/library/lauchdaemons
-Fire up terminal and sudo su enter password.
-Enter this in terminal: chmod 644 /System/Library/LaunchDaemons/com.plex.pms.plist
-Enter this in terminal: chown root:wheel /System/Library/LaunchDaemons/com.plex.pms.plist
+1. Copy your plex app and rename it to PMS in /applications
+2. Show package contents of your new app PMS and rename Applications/PMS.app/Contents/MacOS/Plex Media Server to PMS
+3. Copy the com.plex.pms.plist to system/library/lauchdaemons
+4. Fire up terminal and sudo su enter password.
+5. Enter this in terminal: chmod 644 /System/Library/LaunchDaemons/com.plex.pms.plist
+6. Enter this in terminal: chown root:wheel /System/Library/LaunchDaemons/com.plex.pms.plist
+7. Enter this in terminal: sudo launchctl load /System/Library/LaunchDaemons/com.plex.pms.plist
+8. I also added this to plexconnect.py above (import sys, time) at the beginning of the file so plexconnect can run after pms kills itself if.
+
+import time
+time.sleep(1)
+
+9. You will obviously need to change the plist to the proper directories for the plist and the working directory if you use alternates. This also allows you to not edit plexgdm.py anymore.
 
 Hope this help you guys enjoy :)
+
+Here is the link to the plist
+
+https://github.com/wahlmanj/com.plex.pms.plist
+
+I have yet to see trailers unavaliable yet when my mac is running which is typically 24/7 using the above methods.
