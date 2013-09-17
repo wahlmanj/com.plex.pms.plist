@@ -38,12 +38,12 @@ Copy your plex app and rename it to PMS in /applications then Show package conte
 
 Open terminal and sudo su then your password then enter these commands
 cd /location/of/com.plex.pms.plist
-cp /location/of/com.plex.pms.plist /Library/LaunchDaemons/
+cp com.plex.pms.plist /Library/LaunchDaemons/
 chown root:wheel /Library/LaunchDaemons/com.plex.pms.plist
 chmod 644 /Library/LaunchDaemons/com.plex.pms.plist
 launchctl load /Library/LaunchDaemons/com.plex.pms.plist
 
-I also added this to plexconnect.py above (import sys, time) at the beginning of the file so plexconnect can run after pms kills itself if.
+I also added this to plexconnect.py above (import sys, time) at the beginning of the file so plexconnect can run after pms kills itself prior to login.
 
 import time
 time.sleep(1)
