@@ -50,7 +50,7 @@ time.sleep(1)
 
 9. You will obviously need to change the plist to the proper directories for the plist and the working directory if you use alternates. This also allows you to not edit plexgdm.py anymore.
 
-Here is the link to the plist & the modified plexconnect.py
+Here is the link to the plist & the modified plexconnect.py:
 
 https://github.com/wahlmanj/com.plex.pms.plist
 
