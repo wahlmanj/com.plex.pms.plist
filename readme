@@ -37,19 +37,19 @@ UPDATE!
 AND THE PLEX MEDIA SERVER PLIST IS BORN! Made by me :P
 THIS RUNS PMS PRIOR TO LOGIN ON YOUR OSX INSTALLATION UNTIL GATEKEEPER KILLS IT IF YOU HAVE A PASSWORD.
 
-    Copy your plex app and rename it to PMS in /applications
-    Show package contents of your new app PMS and rename Applications/PMS.app/Contents/MacOS/Plex Media Server to PMS
-    Copy the com.plex.pms.plist to system/library/lauchdaemons
-    Fire up terminal and sudo su enter password.
-    Enter this in terminal: chmod 644 /System/Library/LaunchDaemons/com.plex.pms.plist
-    Enter this in terminal: chown root:wheel /System/Library/LaunchDaemons/com.plex.pms.plist
-    Enter this in terminal: sudo launchctl load /System/Library/LaunchDaemons/com.plex.pms.plist
-    I also added this to plexconnect.py above (import sys, time) at the beginning of the file so plexconnect can run before gatekeeper kills the unsigned pms.
+Copy your plex app and rename it to PMS in /applications
+Show package contents of your new app PMS and rename Applications/PMS.app/Contents/MacOS/Plex Media Server to PMS
+Copy the com.plex.pms.plist to system/library/lauchdaemons
+Fire up terminal and sudo su enter password.
+Enter this in terminal: chmod 644 /System/Library/LaunchDaemons/com.plex.pms.plist
+Enter this in terminal: chown root:wheel /System/Library/LaunchDaemons/com.plex.pms.plist
+Enter this in terminal: sudo launchctl load /System/Library/LaunchDaemons/com.plex.pms.plist
+I also added this to plexconnect.py above (import sys, time) at the beginning of the file so plexconnect can run before gatekeeper kills the unsigned pms.
 
 import time
 time.sleep(.5)
 
-    You will obviously need to change the plist to the proper directories for the plist and the working directory if you use alternates. This also allows you to not edit plexgdm.py anymore.
+You will obviously need to change the plist to the proper directories for the plist and the working directory if you use alternates. This also allows you to not edit plexgdm.py anymore.
 
 Hope this help you guys enjoy :)
 
