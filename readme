@@ -27,6 +27,7 @@ Go into the terminal, change directory into your folder, and enter the following
 Sudo su
 cd /(yourfilelocation)
 cp com.plex.plexconnect.plist /Library/LaunchDaemons/
+cd /library/launchdaemons
 Chmod 644 com.plex.plexconnect.plist
 chown root:wheel com.plex.plexconnect.plist
 launchctl load com.plex.plexconnect.plist
@@ -40,6 +41,7 @@ Open terminal then enter these commands
 sudo su
 cd /(yourfilelocation)
 cp com.plex.pms.plist /Library/LaunchDaemons/
+cd /library/launchdaemons
 chown root:wheel com.plex.pms.plist
 chmod 644 com.plex.pms.plist
 launchctl load com.plex.pms.plist
@@ -49,7 +51,7 @@ I also added this to plexconnect.py above (import sys, time) at the beginning of
 import time
 time.sleep(1)
 
-9. You will obviously need to change the plist to the proper directories for the plist and the working directory if you use alternates. This also allows you to not edit plexgdm.py anymore.
+You will obviously need to change the plist to the proper directories for the plist and the working directory if you use alternates. This also allows you to not edit plexgdm.py anymore.
 
 Here is the link to the plist & the modified plexconnect.py:
 
