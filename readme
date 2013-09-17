@@ -32,7 +32,7 @@ Now goto your atv and change your network to manual and dont change anything but
 
 Enable trailers on your atv if its disabled in parental controls and enjoy plex via the trailers app based on java on your apple tv!
 
-plex media server plist made by me :P This will run plex after you login not at boot since at this time plex cannot start at boot since it was coded that way. This will keep plex running even if it crashes and if the plex media center app ever coded differently it will load plex prior to login.
+plex media server plist made by me :P (requires com.plex.plexconnect.plist loaded via launchctl & modified plexconnect.py installed in your plex connect folder) This will run plex after you login not at boot since at this time plex cannot start at boot since it was coded that way. This will keep plex running even if it crashes and if the plex media center app ever coded differently it will load plex prior to login.
 
 1. Copy your plex app and rename it to PMS in /applications
 2. Show package contents of your new app PMS and rename Applications/PMS.app/Contents/MacOS/Plex Media Server to PMS
@@ -40,7 +40,7 @@ plex media server plist made by me :P This will run plex after you login not at 
 4. Fire up terminal and sudo su enter password.
 5. Enter this in terminal: chmod 644 /System/Library/LaunchDaemons/com.plex.pms.plist
 6. Enter this in terminal: chown root:wheel /System/Library/LaunchDaemons/com.plex.pms.plist
-7. Enter this in terminal: sudo launchctl load /System/Library/LaunchDaemons/com.plex.pms.plist
+7. Enter this in terminal: launchctl load /System/Library/LaunchDaemons/com.plex.pms.plist
 8. I also added this to plexconnect.py above (import sys, time) at the beginning of the file so plexconnect can run after pms kills itself if.
 
 import time
