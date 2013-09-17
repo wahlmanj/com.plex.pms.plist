@@ -32,10 +32,7 @@ Now goto your atv and change your network to manual and dont change anything but
 
 Enable trailers on your atv if its disabled in parental controls and enjoy plex via the trailers app based on java on your apple tv!
 
-UPDATE!
-
-AND THE PLEX MEDIA SERVER PLIST IS BORN! Made by me :P
-THIS RUNS PMS PRIOR TO LOGIN ON YOUR OSX INSTALLATION UNTIL GATEKEEPER KILLS IT IF YOU HAVE A PASSWORD.
+plex media server plist made by me :P This will run plex after you login not at boot since at this time plex cannot start at boot since it was coded that way. This will keep plex running even if it crashes and if the plex media center app ever coded differently it will load plex prior to login. 
 
 Copy your plex app and rename it to PMS in /applications
 Show package contents of your new app PMS and rename Applications/PMS.app/Contents/MacOS/Plex Media Server to PMS
