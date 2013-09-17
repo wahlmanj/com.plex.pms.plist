@@ -53,21 +53,12 @@ You will obviously need to change the plist to the proper directories for the pl
 
 Hope this help you guys enjoy :)
 
-My plist and the edited plexconnect.py are on this site
-This is a tutorial to make atv 2 tethered or untethered or non jailbroken atv3 work with plex media center via 
-plexconnect. I was having issues with my atv2 contantly resetting while watching content on plex every few days. 
-My apple tv is running an untethered jailbreak on 5.2 but from what I understand this should work on other firmware 
-as well only 5.x and up since it needs the trailers app to function. This is also a tutorial for pms for mac only I 
-do not own a pc so I personally cannot answer any questions on that topic but im sure its possible as well. I am not 
-resposible if you brick your device, this how to is for informational purposes only. I have tested on two devices with 
-no issues whatsoever use at your own risk! Ok now that thats over to the good stuff This has also solved the "memory 
-leak issues that have plagued the atv2 untethered 5.2 seasonpass jb" I have yet to see a warning low memory or crash 
-since I have gone this route as stated on the main wiki page
+My plist and the edited plexconnect.py are on this site 
+This is a tutorial to make atv 2 tethered or untethered or non jailbroken atv3 work with plex media center via plexconnect. I was having issues with my atv2 contantly resetting while watching content on plex every few days. My apple tv is running an untethered jailbreak on 5.2 but from what I understand this should work on other firmware as well only 5.x and up since it needs the trailers app to function. This is also a tutorial for pms for mac only I do not own a pc so I personally cannot answer any questions on that topic but im sure its possible as well. I am not resposible if you brick your device, this how to is for informational purposes only. I have tested on two devices with no issues whatsoever use at your own risk! Ok now that thats over to the good stuff This has also solved the "memory leak issues that have plagued the atv2 untethered 5.2 seasonpass jb" I have yet to see a warning low memory or crash since I have gone this route as stated on the main wiki page
 
 http://wiki.plexapp.com/index.php/PlexNine_Client_ATV
 
-Delete plex client on your device or dont install it in the first place if you have atv flash black this should be a 
-breeze for you. Otherwise google is your friend search for your answer!
+Delete plex client on your device or dont install it in the first place if you have atv flash black this should be a breeze for you. Otherwise google is your friend search for your answer!
 
 Download plexconnect on your mac from here:
 
@@ -123,69 +114,6 @@ use alternates. This also allows you to not edit plexgdm.py anymore.
 Hope this help you guys enjoy :)
 
 My plist and the edited plexconnect.py are on this site
-This is a tutorial to make atv 2 tethered or untethered or non jailbroken atv3 work with plex media
-center via plexconnect. I was having issues with my atv2 contantly resetting while watching content
-on plex every few days. My apple tv is running an untethered jailbreak on 5.2 but from what I 
-understand this should work on other firmware as well only 5.x and up since it needs the trailers 
-app to function. This is also a tutorial for pms for mac only I do not own a pc so I personally 
-cannot answer any questions on that topic but im sure its possible as well. I am not resposible 
-if you brick your device, this how to is for informational purposes only. I have tested on two 
-devices with no issues whatsoever use at your own risk! Ok now that thats over to the good stuff 
-This has also solved the "memory leak issues that have plagued the atv2 untethered 5.2 seasonpass 
-jb" I have yet to see a warning low memory or crash since I have gone this route as stated on the 
-main wiki page
-
-http://wiki.plexapp.com/index.php/PlexNine_Client_ATV
-
-Delete plex client on your device or dont install it in the first place if you have atv flash black 
-this should be a breeze for you. Otherwise google is your friend search for your answer!
-
-Download plexconnect on your mac from here:
-
-https://github.com/iBaa/PlexConnect
-
-Unzip, rename the folder to plexconnect and place the unzipped folder in your /users/YOURUSERNAMEHERE 
-directory
-
-Now to the autostarting plexconnect via launchctl
-
-Next, create com.plex.plexconnect.plist with the following:
-
-https://gist.github.com/chrishulbert/5772931
-
-Edit this file, changing the two instances of 'Users/chris/PlexConnect' to the correct folder that 
-you've installed PlexConnect in.
-
-Go into the terminal, change into your plexconnect folder, and do the following:
-
-sudo cp com.plex.plexconnect.plist /Library/LaunchDaemons/
-sudo launchctl load /Library/LaunchDaemons/com.plex.plexconnect.plist
-
-If you have errors run this @ teminal while in /library/launchdaemons
-
-Chmod 644 com.plex.plexconnect.plist
-chown root:wheel com.plex.plexconnect.plist
-
-Now goto your atv and change your network to manual and dont change anything but your dns to point to 
-your pms server for example mine is 192.168.1.25 for my mac
-
-Enable trailers on your atv if its disabled in parental controls and enjoy plex via the trailers app based 
-on java on your apple tv!
-
-UPDATE!
-
-AND THE PLEX MEDIA SERVER PLIST IS BORN! Made by me :P
-THIS RUNS PMS PRIOR TO LOGIN ON YOUR OSX INSTALLATION UNTIL GATEKEEPER KILLS IT IF YOU HAVE A PASSWORD.
-
-Copy your plex app and rename it to PMS in /applications
-Show package contents of your new app PMS and rename Applications/PMS.app/Contents/MacOS/Plex Media Server to PMS
-Copy the com.plex.pms.plist to system/library/lauchdaemons
-Fire up terminal and sudo su enter password.
-Enter this in terminal: chmod 644 /System/Library/LaunchDaemons/com.plex.pms.plist
-Enter this in terminal: chown root:wheel /System/Library/LaunchDaemons/com.plex.pms.plist
-Enter this in terminal: sudo launchctl load /System/Library/LaunchDaemons/com.plex.pms.plist
-I also added this to plexconnect.py above (import sys, time) at the beginning of the file so plexconnect can run 
-before gatekeeper kills the unsigned pms.
 
 import time
 time.sleep(.5)
@@ -195,4 +123,4 @@ you use alternates. This also allows you to not edit plexgdm.py anymore.
 
 Hope this help you guys enjoy :)
 
-My com.plex.pms.plist and the edited plexconnect.py are on this site just clone to desktop and install per tutorial
+My com.plex.pms.plist and the edited plexconnect.py are on this site just clone to desktop and install via tutorial
