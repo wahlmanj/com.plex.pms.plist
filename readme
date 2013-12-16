@@ -1,6 +1,6 @@
-Here is a simple plist for plex media server to keep it up and running.
+Here is a simple plist for plex media server to keep it up and running on osx.
 
-Open terminal then enter these commands
+After you copy the plist to /Library/LaunchDaemons open terminal then enter these commands:
 sudo su
 cd /(yourfilelocation)
 cp com.plex.pms.plist /Library/LaunchDaemons/
