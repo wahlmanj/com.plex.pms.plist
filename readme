@@ -1,32 +1,4 @@
-This is a full tutorial to install and fully automate Plex media server & PlexConnect to start on any atv2/3 (jailbroken or unjailbroken on any ios version 5.x and up since you need the trailers app as of this post date) without any user input if followed in its entirety on OSX. I only use Appletv's as plex clients:
-
-WARNING! If you have a webserver you must change the port to something besides 80 since the atv2/3 uses this port by default. Here is the location of the file you need to edit to change you listening port /etc/apache2/httpd.conf where it says: listen 80 change it to listen 5555 or whatever you like on your Mac.
-
-Create and install the cert to your apple tv from here or use the easy method to install cert:
-
-[url="https://langui.sh/2013/08/27/appletv-ssl-plexconnect/"]https://langui.sh/2013/08/27/appletv-ssl-plexconnect/[/url]
-
-Easy method to install trailers.pem from a webserver no microusb needed post #128:
-
-[url="http://forums.plexapp.com/index.php/topic/79540-windows-specific-instructions-for-creating-and-installing-the-ssl-cert/page-7"]http://forums.plexapp.com/index.php/topic/79540-windows-specific-instructions-for-creating-and-installing-the-ssl-cert/page-7[/url]
-
-Delete plex client on your appletv if its installed, if you have atv flash black this should be a breeze for you. Otherwise google is your friend search for your answer! If your are not jailbroken skip this step(delete plex client).
-
-Download plexconnect on your mac from here:
-
-[url="https://github.com/iBaa/PlexConnect"]https://github.com/iBaa/PlexConnect[/url]
-
-Unzip, rename the folder to plexconnect and place the unzipped folder in your /users/YOURUSERNAMEHERE directory
-
-Run plexconnect using sudo ./plexconnect.py to generate the settings file on your fresh install of plexconnect then install trailers.pem to your plexconnect folder /plexconnect//assets/certificates/trailers.pem
-
-Now to the autostarting plexconnect by using an automator to make an app. (Follow post #97 here)
-
-[url="http://forums.plexapp.com/index.php/topic/70149-has-anyone-created-an-applescriptapplication-to-launch-plexconnect-at-startup/page-12"]http://forums.plexapp.com/index.php/topic/70149-has-anyone-created-an-applescriptapplication-to-launch-plexconnect-at-startup/page-12[/url]
-
-plex media server plist made by me :P This will run plex after you login not at boot since at this time plex cannot start at boot since it was coded that way. This will keep plex running even if it crashes and if the plex media center app ever coded differently it will load plex prior to login.
-
-Copy your plex app and rename it to PMS in /applications then Show package contents of your new app PMS and rename Applications/PMS.app/Contents/MacOS/Plex Media Server to PMS
+Here is a simple plist for plex media server to keep it up and running.
 
 Open terminal then enter these commands
 sudo su
@@ -36,23 +8,4 @@ cd /library/launchdaemons
 chown root:wheel com.plex.pms.plist
 chmod 644 com.plex.pms.plist
 launchctl load com.plex.pms.plist
-
-You will obviously need to change the plist to the proper directories for the plist and the working directory if you use alternates. This also allows you to not edit plexgdm.py anymore.
-
-Here is the link to the plist & the modified plexconnect.py:
-
-[url="https://github.com/wahlmanj/com.plex.pms.plist"]https://github.com/wahlmanj/com.plex.pms.plist[/url]
-
-Reset your mac then goto your atv and change your network to manual and dont change anything but your dns to point to your pms server for example my mac ip is 192.168.1.101
-
-I have yet to see trailers unavaliable yet when my mac is running which is typically 24/7 using the above methods.
-
-Start Plex Media Center & PlexConnect automatically at boot without any user input:
-
-[url="http://forums.plexapp.com/index.php/topic/81127-plex-media-center-automatic-startup-applescript-login-option-osx/"]http://forums.plexapp.com/index.php/topic/81127-plex-media-center-automatic-startup-applescript-login-option-osx/[/url]
-
-Enable trailers on your atv if its disabled in parental controls and enjoy plex via the trailers app using plexconnect on your AppleTV!
-
-Always remeber the best update is no update! Save your .shsh today in case apple breaks the trailers app in new release's rendering plexconnect unusable:
-
-[url="http://thefirmwareumbrella.blogspot.com/"]http://thefirmwareumbrella.blogspot.com/[/url]
+launchctl start com.plex.pms
