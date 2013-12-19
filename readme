@@ -6,3 +6,9 @@ chown root:wheel com.plex.pms.plist
 chmod 644 com.plex.pms.plist
 launchctl load com.plex.pms.plist
 launchctl start com.plex.pms
+
+If you need to unload the plist for any reason open terminal then enter these commands:
+
+sudo su
+cd /Library/LaunchDaemons
+launchctl unload com.plex.pms.plist
