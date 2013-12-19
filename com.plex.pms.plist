@@ -9,7 +9,7 @@
         <false/>
         <key>ProgramArguments</key>
         <array>
-                <string>/Applications/Plex\ Media\ Server.app/Contents/MacOS/Plex\ Media\ Server</string>
+        <string>/Applications/Plex\ Media\ Server.app/Contents/MacOS/Plex\ Media\ Server</string>
         </array>
         <key>RunAtLoad</key>
         <true/>
