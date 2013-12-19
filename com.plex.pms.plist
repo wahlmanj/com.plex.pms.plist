@@ -3,21 +3,21 @@
     "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Label</key>
-  <string>com.plex.pms</string>
-        <key>OnDemand</key>
-        <false/>
-        <key>ProgramArguments</key>
-        <array>
-        <string>/Applications/Plex\ Media\ Server.app/Contents/MacOS/Plex\ Media\ Server</string>
-        </array>
-        <key>RunAtLoad</key>
-        <true/>
-        <key>UserName</key>
-        <string>__USERNAME__</string>
-        <key>WorkingDirectory</key>
-        <string>/Applications</string>
-        <key>ServiceDescription</key>
-        <string>PMS</string>
-        </dict>
+<key>Label</key>
+<string>com.plex.pms</string>
+<key>OnDemand</key>
+<false/>
+<key>ProgramArguments</key>
+<array>
+<string>/Applications/Plex\ Media\ Server.app/Contents/MacOS/Plex\ Media\ Server</string>
+</array>
+<key>RunAtLoad</key>
+<true/>
+<key>UserName</key>
+<string>__USERNAME__</string>
+<key>WorkingDirectory</key>
+<string>/Applications</string>
+<key>ServiceDescription</key>
+<string>PMS</string>
+</dict>
 </plist>
