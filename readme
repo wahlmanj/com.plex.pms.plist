@@ -1,11 +1,8 @@
 Here is a simple plist for plex media server to keep it up and running on osx. Prior to install change the __USERNAME__ string in the plist with your username. After you edit and copy the plist to /Library/LaunchDaemons open terminal then enter these commands:
 
 sudo su
-cd /Library/LaunchDaemons
-chown root:wheel com.plex.pms.plist
-chmod 644 com.plex.pms.plist
-launchctl load com.plex.pms.plist
-launchctl start com.plex.pms
+chmod +x install.bash
+./install.bash
 
 If you need to unload the plist for any reason open terminal then enter these commands:
 
