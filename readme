@@ -1,6 +1,7 @@
-Here is a simple plist for plex media server to keep it up and running on osx. Prior to install change the __USERNAME__ string in the plist with your username. After you edit and copy the plist to /Library/LaunchDaemons open terminal then enter these commands:
+Here is a simple plist for plex media server to keep it up and running on osx. Prior to install change the __USERNAME__ string in the plist with your username. Open terminal then enter these commands:
 
 sudo su
+# Change directory to the master
 chmod +x install.bash
 ./install.bash
 
